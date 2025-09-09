@@ -83,18 +83,61 @@
       color: inherit;
     }
 
-    h1 {
-      font-size: 2.5rem;   /* explicitly define font size */
+    /* h1 {
+      font-size: 2.5rem;   
     }
 
     h2 {
-      font-size: 1.8rem;   /* also define h2 if you want consistency */
-    }
+      font-size: 1.8rem;   
+    } */
 
     h1, h2, h3, h4, h5, h6 {
       font-weight: bold;
       text-align: center;
       margin: 1rem 0;
+    }
+
+    details {
+      width: fit-content;
+      margin: 1rem auto;
+      cursor: pointer;
+    }
+
+    summary {
+      font-size: 1.2rem;
+      font-weight: bold;
+      list-style: none; /* remove default triangle */
+      display: flex;
+      align-items: center;
+    }
+
+    /* Add a custom arrow that spins */
+    summary::before {
+      content: "▶";
+      display: inline-block;
+      margin-right: 0.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    /* Spin the arrow when open */
+    details[open] summary::before {
+      transform: rotate(90deg);
+    }
+
+    .accordion {
+      width: 390px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .accordion img {
+      width: 100%;
+      height: auto; 
+      display: block; 
+      object-fit: contain; 
+      max-width: 100%; 
     }
   </style>
 </head>
@@ -156,6 +199,17 @@
       <div class="thumbnail">
         <img src="./img/nets_vs_automata.png">
       </div>
+      <details>
+        <summary>Deep Dive</summary>
+        <div class="accordion">
+          <img src="./img/zero_padding.png">
+          <img src="./img/ca_torus.png">
+          <img src="./img/toroidal_padding.png">
+          <img src="./img/net_diagram.png">
+          <img src="./img/net_diagram2.png">
+          <img src="./img/net_architecture.png">
+        </div>
+      </details>
     </a>
   </section>
 
